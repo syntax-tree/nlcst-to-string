@@ -1,0 +1,29 @@
+{
+  "name": "nlcst-to-string",
+  "main": "index.js",
+  "description": "Transform a Natural Language Syntax Tree (NCLST) node into a string",
+  "license": "MIT",
+  "keywords": [
+    "nlcst",
+    "to",
+    "string"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/nlcst-to-string.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "component.json",
+    "package.json",
+    "coverage",
+    "node_modules",
+    "benchmark",
+    "spec"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "nlcst-to-string",
+  "version": "0.0.1",
+  "description": "Transform a Natural Language Syntax Tree (NCLST) node into a string",
+  "license": "MIT",
+  "keywords": [
+    "nlcst",
+    "to",
+    "string"
+  ],
+  "repository": "wooorm/nlcst-to-string",
+  "scripts" : [
+    "index.js"
+  ]
+}
