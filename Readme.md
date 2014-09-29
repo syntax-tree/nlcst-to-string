@@ -22,9 +22,9 @@ $ bower install nlcst-to-string
 ## Usage
 
 ````js
-var tokenToString = require('nlcst-to-string');
+var nlcstToString = require('nlcst-to-string');
 
-tokenToString({
+nlcstToString({
   "type": "WordNode",
   "data": {
     "partOfSpeech": [
