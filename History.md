@@ -1,5 +1,5 @@
 
-n.n.n / 2014-09-29
+0.0.2 / 2014-09-29
 ==================
 
  * Fix missing `concrete` in NLCST definition
