@@ -1,7 +1,7 @@
 {
   "name": "nlcst-to-string",
   "version": "0.0.1",
-  "description": "Transform a Natural Language Syntax Tree (NCLST) node into a string",
+  "description": "Transform a Natural Language Concrete Syntax Tree (NCLST) node into a string",
   "license": "MIT",
   "keywords": [
     "nlcst",

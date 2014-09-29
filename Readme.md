@@ -1,6 +1,6 @@
 # nlcst-to-string [![Build Status](https://img.shields.io/travis/wooorm/nlcst-to-string.svg)](https://travis-ci.org/wooorm/nlcst-to-string) [![Coverage Status](https://img.shields.io/coveralls/wooorm/nlcst-to-string.svg)](https://coveralls.io/r/wooorm/nlcst-to-string?branch=master)
 
-Transform a Natural Language Syntax Tree (NCLST) node into a string
+Transform a Natural Language Concrete Syntax Tree (NCLST) node into a string
 
 ## Installation
 
