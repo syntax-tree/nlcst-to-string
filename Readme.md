@@ -1,6 +1,6 @@
 # nlcst-to-string [![Build Status](https://img.shields.io/travis/wooorm/nlcst-to-string.svg)](https://travis-ci.org/wooorm/nlcst-to-string) [![Coverage Status](https://img.shields.io/coveralls/wooorm/nlcst-to-string.svg)](https://coveralls.io/r/wooorm/nlcst-to-string?branch=master)
 
-Transform a Natural Language Concrete Syntax Tree (NLCST) node into a string
+Transform an [NLCST](https://github.com/wooorm/nlcst) node into a string.
 
 ## Installation
 
@@ -59,6 +59,7 @@ nlcstToString({
 
 ## Related
 
+- [nlcst](https://github.com/wooorm/parse-nlcst)
 - [parse-latin](https://github.com/wooorm/parse-latin)
 - [parse-dutch](https://github.com/wooorm/parse-dutch)
 - [parse-english](https://github.com/wooorm/parse-english)
