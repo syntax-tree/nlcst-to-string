@@ -7,7 +7,7 @@
 var nlcstToString,
     assert;
 
-nlcstToString = require('..');
+nlcstToString = require('./');
 assert = require('assert');
 
 describe('nlcstToString(nlcst)', function () {
