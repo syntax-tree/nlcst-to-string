@@ -1,5 +1,5 @@
 
-n.n.n / 2014-10-20
+0.1.1 / 2014-10-20
 ==================
 
  * Update .gitignore, .npmignore, bower ignore
