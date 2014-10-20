@@ -1,4 +1,10 @@
 
+n.n.n / 2014-10-20
+==================
+
+ * Update .gitignore, .npmignore, bower ignore
+ * Move spec to test.js
+
 0.1.0 / 2014-10-07
 ==================
 
