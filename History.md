@@ -1,4 +1,14 @@
 
+n.n.n / 2014-11-06
+==================
+
+ * Refactor test
+ * Add flat badges to `Readme.md`
+ * Refactor npm script target order in `package.json`
+ * Add `.eslintrc`
+ * Refactor to disallow space after object keys
+ * Update eslint, mocha
+
 0.1.1 / 2014-10-20
 ==================
 
