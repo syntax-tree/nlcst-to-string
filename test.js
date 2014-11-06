@@ -17,15 +17,15 @@ describe('nlcstToString(nlcst)', function () {
 
     it('should return `value` if existing on `nlcst`', function () {
         assert(nlcstToString({
-            'value' : 'AT'
+            'value': 'AT'
         }) === 'AT');
     });
 
     it('should return the value of `children`', function () {
         assert(nlcstToString({
-            'children' : [
+            'children': [
                 {
-                    'value' : 'AT'
+                    'value': 'AT'
                 }
             ]
         }) === 'AT');
@@ -33,15 +33,15 @@ describe('nlcstToString(nlcst)', function () {
 
     it('should return the concat of `children[n].value`', function () {
         assert(nlcstToString({
-            'children' : [
+            'children': [
                 {
-                    'value' : 'AT'
+                    'value': 'AT'
                 },
                 {
-                    'value' : '&'
+                    'value': '&'
                 },
                 {
-                    'value' : 'T'
+                    'value': 'T'
                 }
             ]
         }) === 'AT&T');
@@ -49,19 +49,19 @@ describe('nlcstToString(nlcst)', function () {
 
     it('should return the concat of multi-level `children`', function () {
         assert(nlcstToString({
-            'children' : [
+            'children': [
                 {
-                    'value' : 'AT'
+                    'value': 'AT'
                 },
                 {
-                    'children' : [
+                    'children': [
                         {
-                            'value' : '&'
+                            'value': '&'
                         }
                     ]
                 },
                 {
-                    'value' : 'T'
+                    'value': 'T'
                 }
             ]
         }) === 'AT&T');
