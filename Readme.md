@@ -1,4 +1,4 @@
-# nlcst-to-string [![Build Status](https://img.shields.io/travis/wooorm/nlcst-to-string.svg)](https://travis-ci.org/wooorm/nlcst-to-string) [![Coverage Status](https://img.shields.io/coveralls/wooorm/nlcst-to-string.svg)](https://coveralls.io/r/wooorm/nlcst-to-string?branch=master)
+# nlcst-to-string [![Build Status](https://img.shields.io/travis/wooorm/nlcst-to-string.svg?style=flat)](https://travis-ci.org/wooorm/nlcst-to-string) [![Coverage Status](https://img.shields.io/coveralls/wooorm/nlcst-to-string.svg?style=flat)](https://coveralls.io/r/wooorm/nlcst-to-string?branch=master)
 
 Transform an [NLCST](https://github.com/wooorm/nlcst) node into a string.
 
