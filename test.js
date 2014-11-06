@@ -10,6 +10,10 @@ var nlcstToString,
 nlcstToString = require('./');
 assert = require('assert');
 
+/**
+ * Tests.
+ */
+
 describe('nlcstToString(nlcst)', function () {
     it('should be a `function`', function () {
         assert(typeof nlcstToString === 'function');
@@ -31,7 +35,7 @@ describe('nlcstToString(nlcst)', function () {
         }) === 'AT');
     });
 
-    it('should return the concat of `children[n].value`', function () {
+    it('should return the sum of `children[n].value`', function () {
         assert(nlcstToString({
             'children': [
                 {
@@ -47,7 +51,7 @@ describe('nlcstToString(nlcst)', function () {
         }) === 'AT&T');
     });
 
-    it('should return the concat of multi-level `children`', function () {
+    it('should return the sum of multi-level `children`', function () {
         assert(nlcstToString({
             'children': [
                 {
