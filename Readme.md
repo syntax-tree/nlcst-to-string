@@ -24,34 +24,29 @@ $ bower install nlcst-to-string
 ````js
 var nlcstToString = require('nlcst-to-string');
 
-nlcstToString({
-  "type": "WordNode",
-  "data": {
-    "partOfSpeech": [
-      "NNP",
-      "NN"
-    ]
-  },
-  "children": [
-    {
-      "type": "TextNode",
-      "value": "AT"
+console.log(nlcstToString({
+    "type": "WordNode",
+    "data": {
+        "partOfSpeech": [
+            "NNP",
+            "NN"
+        ]
     },
-    {
-      "type": "PunctuationNode",
-      "children": [
+    "children": [
         {
-          "type": "TextNode",
-          "value": "&"
+            "type": "TextNode",
+            "value": "AT"
+        },
+        {
+            "type": "PunctuationNode",
+            "value": "&"
+        },
+        {
+            "type": "TextNode",
+            "value": "T"
         }
-      ]
-    },
-    {
-      "type": "TextNode",
-      "value": "T"
-    }
-  ]
-});
+    ]
+}));
 /*
  * "AT&T"
  */
