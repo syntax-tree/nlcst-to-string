@@ -1,4 +1,9 @@
 
+n.n.n / 2014-12-09
+==================
+
+ * Fix to be more forgiving when stringifying
+
 0.1.3 / 2014-12-05
 ==================
 
