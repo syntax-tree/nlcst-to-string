@@ -1,5 +1,5 @@
 
-n.n.n / 2014-12-09
+0.1.4 / 2014-12-09
 ==================
 
  * Fix to be more forgiving when stringifying
