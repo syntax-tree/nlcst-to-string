@@ -12,7 +12,7 @@ function nlcstToString(nlcst) {
         length,
         children;
 
-    if (nlcst.value) {
+    if (typeof nlcst.value === 'string') {
         return nlcst.value;
     }
 
