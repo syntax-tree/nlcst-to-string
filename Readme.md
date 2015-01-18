@@ -4,19 +4,19 @@ Transform an [NLCST](https://github.com/wooorm/nlcst) node into a string.
 
 ## Installation
 
-npm:
+[npm](https://docs.npmjs.com/cli/install):
 
 ```bash
 $ npm install nlcst-to-string
 ```
 
-Component.js:
+[Component.js](https://github.com/componentjs/component):
 
 ```bash
 $ component install wooorm/nlcst-to-string
 ```
 
-Bower:
+[Bower](http://bower.io/#install-packages):
 
 ```bash
 $ bower install nlcst-to-string
