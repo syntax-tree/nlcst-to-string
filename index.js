@@ -6,7 +6,6 @@
  * @param {NLCSTNode} nlcst
  * @return {string}
  */
-
 function nlcstToString(nlcst) {
     var values,
         length,
@@ -35,5 +34,9 @@ function nlcstToString(nlcst) {
 
     return values.join('');
 }
+
+/*
+ * Expose `nlcstToString`.
+ */
 
 module.exports = nlcstToString;
