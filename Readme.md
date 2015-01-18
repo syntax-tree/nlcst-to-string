@@ -72,4 +72,4 @@ console.log(nlcstToString({
 
 ## License
 
-MIT © [Titus Wormer](http://wooorm.com)
+[MIT](LICENSE) © [Titus Wormer](http://wooorm.com)
