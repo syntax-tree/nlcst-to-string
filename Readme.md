@@ -5,23 +5,26 @@ Transform an [NLCST](https://github.com/wooorm/nlcst) node into a string.
 ## Installation
 
 npm:
-```sh
+
+```bash
 $ npm install nlcst-to-string
 ```
 
 Component.js:
-```sh
+
+```bash
 $ component install wooorm/nlcst-to-string
 ```
 
 Bower:
-```sh
+
+```bash
 $ bower install nlcst-to-string
 ```
 
 ## Usage
 
-````js
+````javascript
 var nlcstToString = require('nlcst-to-string');
 
 console.log(nlcstToString({
