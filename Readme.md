@@ -22,6 +22,12 @@ $ component install wooorm/nlcst-to-string
 $ bower install nlcst-to-string
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var nlcstToString = require('wooorm/nlcst-to-string');
+```
+
 ## Usage
 
 ````javascript
