@@ -13,7 +13,8 @@
 /**
  * Stringify an NLCST node.
  *
- * @param {NLCSTNode} node - Node to to stringify.
+ * @param {NLCSTNode|Array.<NLCSTNode>} node - Node to to
+ *   stringify.
  * @return {string} - Stringified `node`.
  */
 function nlcstToString(node) {
@@ -25,7 +26,7 @@ function nlcstToString(node) {
         return node.value;
     }
 
-    children = node.children;
+    children = 'length' in node ? node : node.children;
     length = children.length;
 
     /*

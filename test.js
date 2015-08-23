@@ -86,4 +86,22 @@ describe('toString()', function () {
             ]
         }), 'AT&T');
     });
+
+    it('should concatenate a list of nodes', function () {
+        equal(toString([
+            {
+                'value': 'AT'
+            },
+            {
+                'children': [
+                    {
+                        'value': '&'
+                    }
+                ]
+            },
+            {
+                'value': 'T'
+            }
+        ]), 'AT&T');
+    });
 });

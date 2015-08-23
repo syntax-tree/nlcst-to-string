@@ -55,16 +55,24 @@ AT&T
 
 ### toString(node)
 
-Stringify an [NLCST](https://github.com/wooorm/nlcst) [node](https://github.com/wooorm/nlcst#node).
+Stringify an [NLCST](https://github.com/wooorm/nlcst) [node](https://github.com/wooorm/nlcst#node)
+(or an array of NLCST nodes).
+
+**Signatures**
+
+*   `toString(node)`;
+*   `toString(nodes)`.
 
 **Parameters**
 
 *   `node` ([`NLCSTNode`](https://github.com/wooorm/nlcst#node))
     — Node to to stringify.
 
+*   `nodes` (`Array.<NLCSTNode>`) — Nodes to to stringify.
+
 **Returns**
 
-`string` — Stringified `node`.
+`string` — Stringified `node` / `nodes`.
 
 ## License
 
