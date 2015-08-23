@@ -2,6 +2,12 @@
 
 <!--lint disable no-multiple-toplevel-headings-->
 
+1.0.0 / 2015-08-23
+==================
+
+*   Add support for passing a list of nodes ([9be56e9](https://github.com/wooorm/nlcst-to-string/commit/9be56e9))
+*   Refactor project ([e2f1d0b](https://github.com/wooorm/nlcst-to-string/commit/e2f1d0b))
+
 0.1.5 / 2015-01-18
 ==================
 
