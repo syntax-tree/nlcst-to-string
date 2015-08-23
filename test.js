@@ -1,42 +1,58 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014-2015 Titus Wormer
+ * @license MIT
+ * @module nlcst:to-string
+ * @fileoverview Test suite for `nlcst-to-string`.
+ */
+
 'use strict';
+
+/* eslint-env node, mocha */
 
 /*
  * Dependencies.
  */
 
-var nlcstToString,
-    assert;
+var assert = require('assert');
+var toString = require('./');
 
-nlcstToString = require('./');
-assert = require('assert');
+/*
+ * Methods.
+ */
+
+var equal = assert.strictEqual;
+
+/**
+ * No-op.
+ */
+function noop() {}
+
+noop();
 
 /*
  * Tests.
  */
 
-describe('nlcstToString(nlcst)', function () {
-    it('should be a `function`', function () {
-        assert(typeof nlcstToString === 'function');
-    });
-
-    it('should return `value` if existing on `nlcst`', function () {
-        assert(nlcstToString({
+describe('toString()', function () {
+    it('should return `value` if existing', function () {
+        equal(toString({
             'value': 'AT'
-        }) === 'AT');
+        }), 'AT');
     });
 
-    it('should return the value of `children`', function () {
-        assert(nlcstToString({
+    it('should return `value` of `children` when existing', function () {
+        equal(toString({
             'children': [
                 {
                     'value': 'AT'
                 }
             ]
-        }) === 'AT');
+        }), 'AT');
     });
 
-    it('should return the sum of `children[n].value`', function () {
-        assert(nlcstToString({
+    it('should concatenate `children`', function () {
+        equal(toString({
             'children': [
                 {
                     'value': 'AT'
@@ -48,11 +64,11 @@ describe('nlcstToString(nlcst)', function () {
                     'value': 'T'
                 }
             ]
-        }) === 'AT&T');
+        }), 'AT&T');
     });
 
-    it('should return the sum of multi-level `children`', function () {
-        assert(nlcstToString({
+    it('should concatenate multi-level `children`', function () {
+        equal(toString({
             'children': [
                 {
                     'value': 'AT'
@@ -68,6 +84,6 @@ describe('nlcstToString(nlcst)', function () {
                     'value': 'T'
                 }
             ]
-        }) === 'AT&T');
+        }), 'AT&T');
     });
 });

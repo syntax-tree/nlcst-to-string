@@ -1,35 +1,46 @@
 {
   "name": "nlcst-to-string",
-  "version": "0.1.5",
-  "description": "Transform a Natural Language Concrete Syntax Tree (NLCST) node into a string",
+  "version": "1.0.0",
+  "description": "Transform an NLCST node into a string",
   "license": "MIT",
   "keywords": [
     "nlcst",
+    "retext",
     "to",
     "string"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/nlcst-to-string.git"
-  },
+  "repository": "wooorm/nlcst-to-string",
   "author": "Titus Wormer <tituswormer@gmail.com>",
+  "files": [
+    "index.js"
+  ],
   "devDependencies": {
-    "eslint": "^0.12.0",
+    "browserify": "^11.0.0",
+    "eslint": "^1.0.0",
+    "esmangle": "^1.0.0",
     "istanbul": "^0.3.0",
-    "jscs": "^1.0.0",
-    "jscs-jsdoc": "^0.4.0",
+    "jscs": "^2.0.0",
+    "jscs-jsdoc": "^1.0.0",
+    "mdast": "^1.0.0",
+    "mdast-comment-config": "^1.0.0",
+    "mdast-github": "^1.0.0",
+    "mdast-lint": "^1.0.0",
+    "mdast-slug": "^1.0.0",
+    "mdast-validate-links": "^1.0.0",
     "mocha": "^2.0.0"
   },
   "scripts": {
-    "test-api": "_mocha --check-leaks test.js",
-    "test-coveralls": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
-    "test-coverage": "istanbul cover _mocha -- --check-leaks test.js",
-    "test-travis": "npm run test-coveralls",
+    "test-api": "mocha --check-leaks test.js",
+    "test-coverage": "istanbul cover _mocha -- test.js",
+    "test-travis": "npm run test-coverage",
     "test": "npm run test-api",
-    "lint-api": "eslint index.js",
-    "lint-test": "eslint --env mocha test.js",
-    "lint-style": "jscs --reporter inline index.js test.js",
-    "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
-    "make": "npm run lint && npm run test-coverage"
+    "lint-api": "eslint .",
+    "lint-style": "jscs --reporter inline .",
+    "lint": "npm run lint-api && npm run lint-style",
+    "make": "npm run lint && npm run test-coverage",
+    "bundle": "browserify index.js --no-builtins -s nlcstToString > nlcst-to-string.js",
+    "postbundle": "esmangle nlcst-to-string.js > nlcst-to-string.min.js",
+    "build-md": "mdast . --quiet",
+    "build": "npm run bundle && npm run build-md"
   }
 }
