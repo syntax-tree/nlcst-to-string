@@ -104,4 +104,37 @@ describe('toString()', function () {
             }
         ]), 'AT&T');
     });
+
+    it('should concatenate `children` with a separator', function () {
+        equal(toString({
+            'children': [
+                {
+                    'children': [
+                        {
+                            'value': 'AT'
+                        },
+                        {
+                            'value': '&'
+                        },
+                        {
+                            'value': 'T'
+                        }
+                    ]
+                },
+                {
+                    'children': [
+                        {
+                            'value': 'AT'
+                        },
+                        {
+                            'value': '&'
+                        },
+                        {
+                            'value': 'T'
+                        }
+                    ]
+                }
+            ]
+        }, ' '), 'AT & T AT & T');
+    });
 });
