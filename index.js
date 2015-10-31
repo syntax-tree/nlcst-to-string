@@ -15,12 +15,16 @@
  *
  * @param {NLCSTNode|Array.<NLCSTNode>} node - Node to to
  *   stringify.
+ * @param {string} separator - Value to separate each item
+ *   with.
  * @return {string} - Stringified `node`.
  */
-function nlcstToString(node) {
+function nlcstToString(node, separator) {
     var values;
     var length;
     var children;
+
+    separator = separator || '';
 
     if (typeof node.value === 'string') {
         return node.value;
@@ -40,10 +44,10 @@ function nlcstToString(node) {
     values = [];
 
     while (length--) {
-        values[length] = nlcstToString(children[length]);
+        values[length] = nlcstToString(children[length], separator);
     }
 
-    return values.join('');
+    return values.join(separator);
 }
 
 /*
