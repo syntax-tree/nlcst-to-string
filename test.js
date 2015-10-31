@@ -109,15 +109,32 @@ describe('toString()', function () {
         equal(toString({
             'children': [
                 {
-                    'value': 'AT'
+                    'children': [
+                        {
+                            'value': 'AT'
+                        },
+                        {
+                            'value': '&'
+                        },
+                        {
+                            'value': 'T'
+                        }
+                    ]
                 },
                 {
-                    'value': '&'
-                },
-                {
-                    'value': 'T'
+                    'children': [
+                        {
+                            'value': 'AT'
+                        },
+                        {
+                            'value': '&'
+                        },
+                        {
+                            'value': 'T'
+                        }
+                    ]
                 }
             ]
-        }, ' '), 'AT & T');
+        }, ' '), 'AT & T AT & T');
     });
 });

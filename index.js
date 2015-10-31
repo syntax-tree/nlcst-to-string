@@ -43,7 +43,7 @@ function nlcstToString(node, separator) {
     values = [];
 
     while (length--) {
-        values[length] = nlcstToString(children[length]);
+        values[length] = nlcstToString(children[length], separator);
     }
 
     return values.join(separator);
