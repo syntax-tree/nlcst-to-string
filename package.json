@@ -1,6 +1,6 @@
 {
   "name": "nlcst-to-string",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Transform an NLCST node into a string",
   "license": "MIT",
   "keywords": [
