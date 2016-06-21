@@ -1,6 +1,6 @@
 /**
  * @author Titus Wormer
- * @copyright 2014-2015 Titus Wormer
+ * @copyright 2014 Titus Wormer
  * @license MIT
  * @module nlcst:to-string
  * @fileoverview Test suite for `nlcst-to-string`.
@@ -8,133 +8,78 @@
 
 'use strict';
 
-/* eslint-env node, mocha */
+/* eslint-env node */
+/* jscs:disable jsDoc */
+/* jscs:disable maximumLineLength */
 
-/*
- * Dependencies.
- */
+/* Dependencies. */
+var test = require('tape');
+var toString = require('./index.js');
+var u = require('unist-builder');
 
-var assert = require('assert');
-var toString = require('./');
+/* Tests. */
+test('toString()', function (t) {
+    t.throws(
+        function () {
+            toString()
+        },
+        /undefined/,
+        'should throw when not given a node (#1)'
+    );
 
-/*
- * Methods.
- */
+    t.throws(
+        function () {
+            toString({value: 'foo'})
+        },
+        /\[object Object\]/,
+        'should throw when not given a node (#2)'
+    );
 
-var equal = assert.strictEqual;
+    t.equal(
+        toString(u('foo', 'AT')),
+        'AT',
+        'should support texts'
+    );
 
-/**
- * No-op.
- */
-function noop() {}
+    t.equal(
+        toString(u('foo', [
+            u('bar', 'AT'),
+            u('bar', '&'),
+            u('bar', 'T')
+        ])),
+        'AT&T',
+        'should support parents'
+    );
 
-noop();
+    t.equal(
+        toString([
+            u('bar', 'AT'),
+            u('bar', '&'),
+            u('bar', 'T')
+        ]),
+        'AT&T',
+        'should support nodes'
+    );
 
-/*
- * Tests.
- */
+    t.equal(
+        toString(u('foo', [
+            u('bar', 'AT'),
+            u('foo', [u('bar', '&')]),
+            u('bar', 'T')
+        ])),
+        'AT&T',
+        'should support parents with mixed children'
+    );
 
-describe('toString()', function () {
-    it('should return `value` if existing', function () {
-        equal(toString({
-            'value': 'AT'
-        }), 'AT');
-    });
+    t.equal(
+        toString(u('foo', [
+            u('bar', 'AT'),
+            u('foo', [u('bar', '&')]),
+            u('bar', 'T')
+        ]), ','),
+        'AT,&,T',
+        'should support separators'
+    );
 
-    it('should return `value` of `children` when existing', function () {
-        equal(toString({
-            'children': [
-                {
-                    'value': 'AT'
-                }
-            ]
-        }), 'AT');
-    });
-
-    it('should concatenate `children`', function () {
-        equal(toString({
-            'children': [
-                {
-                    'value': 'AT'
-                },
-                {
-                    'value': '&'
-                },
-                {
-                    'value': 'T'
-                }
-            ]
-        }), 'AT&T');
-    });
-
-    it('should concatenate multi-level `children`', function () {
-        equal(toString({
-            'children': [
-                {
-                    'value': 'AT'
-                },
-                {
-                    'children': [
-                        {
-                            'value': '&'
-                        }
-                    ]
-                },
-                {
-                    'value': 'T'
-                }
-            ]
-        }), 'AT&T');
-    });
-
-    it('should concatenate a list of nodes', function () {
-        equal(toString([
-            {
-                'value': 'AT'
-            },
-            {
-                'children': [
-                    {
-                        'value': '&'
-                    }
-                ]
-            },
-            {
-                'value': 'T'
-            }
-        ]), 'AT&T');
-    });
-
-    it('should concatenate `children` with a separator', function () {
-        equal(toString({
-            'children': [
-                {
-                    'children': [
-                        {
-                            'value': 'AT'
-                        },
-                        {
-                            'value': '&'
-                        },
-                        {
-                            'value': 'T'
-                        }
-                    ]
-                },
-                {
-                    'children': [
-                        {
-                            'value': 'AT'
-                        },
-                        {
-                            'value': '&'
-                        },
-                        {
-                            'value': 'T'
-                        }
-                    ]
-                }
-            ]
-        }, ' '), 'AT & T AT & T');
-    });
+    t.end();
 });

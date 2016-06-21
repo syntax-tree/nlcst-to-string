@@ -1,48 +1,37 @@
-# nlcst-to-string [![Build Status](https://img.shields.io/travis/wooorm/nlcst-to-string.svg)](https://travis-ci.org/wooorm/nlcst-to-string) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/nlcst-to-string.svg)](https://codecov.io/github/wooorm/nlcst-to-string)
+# nlcst-to-string [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-Transform an [NLCST](https://github.com/wooorm/nlcst) node into a string.
+<!--lint disable heading-increment list-item-spacing-->
+
+Stringify [NLCST][].
 
 ## Installation
 
-[npm](https://docs.npmjs.com/cli/install):
+[npm][npm-install]:
 
 ```bash
 npm install nlcst-to-string
 ```
 
-**nlcst-to-string** is also available for [bower](http://bower.io/#install-packages),
-[component](https://github.com/componentjs/component), and
-[duo](http://duojs.org/#getting-started), and as an AMD, CommonJS, and globals
-module, [uncompressed](nlcst-to-string.js) and [compressed](nlcst-to-string.min.js).
-
 ## Usage
 
-```javascript
-var nlcstToString = require('nlcst-to-string');
+Dependencies:
 
-console.log(nlcstToString({
-    "type": "WordNode",
-    "data": {
-        "partOfSpeech": [
-            "NNP",
-            "NN"
-        ]
-    },
-    "children": [
-        {
-            "type": "TextNode",
-            "value": "AT"
-        },
-        {
-            "type": "PunctuationNode",
-            "value": "&"
-        },
-        {
-            "type": "TextNode",
-            "value": "T"
-        }
+```javascript
+var toString = require('nlcst-to-string');
+```
+
+Stringify:
+
+```javascript
+var node = {
+    type: 'WordNode',
+    children: [
+        { type: 'TextNode', value: 'AT' },
+        { type: 'PunctuationNode', value: '&' },
+        { type: 'TextNode', value: 'T' }
     ]
-}));
+};
+var value = toString(node);
 ```
 
 Yields:
@@ -53,30 +42,38 @@ AT&T
 
 ## API
 
-### toString(node\[, separator\])
+### `toString(node[, separator])`
 
-Stringify an [NLCST](https://github.com/wooorm/nlcst) [node](https://github.com/wooorm/nlcst#node)
-(or an array of NLCST nodes).
+Stringify the given [NLCST][] node (or list of nodes).
 
-**Signatures**
+###### Parameters
 
-*   `toString(node[, separator])`;
-*   `toString(nodes[, separator])`.
+*   `node` ([`NLCSTNode`][nlcst] or `Array.<NLCSTNode>`).
+*   `separator` (`string`, optional, default: `''`)
+    — Value to separate each item with.
 
-**Parameters**
+###### Returns
 
-*   `node` ([`NLCSTNode`](https://github.com/wooorm/nlcst#node))
-    — Node to to stringify.
-
-*   `nodes` (`Array.<NLCSTNode>`) — Nodes to to stringify.
-
-*   `separator` (`string`, optional, default: `''`) — Value to separate
-    each item with.
-
-**Returns**
-
-`string` — Stringified `node` / `nodes`.
+`string`.
 
 ## License
 
-[MIT](LICENSE) © [Titus Wormer](http://wooorm.com)
+[MIT][license] © [Titus Wormer][author]
+
+<!-- Definitions -->
+
+[travis-badge]: https://img.shields.io/travis/wooorm/nlcst-to-string.svg
+
+[travis]: https://travis-ci.org/wooorm/nlcst-to-string
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/nlcst-to-string.svg
+
+[codecov]: https://codecov.io/github/wooorm/nlcst-to-string
+
+[npm-install]: https://docs.npmjs.com/cli/install
+
+[license]: LICENSE
+
+[author]: http://wooorm.com
+
+[nlcst]: https://github.com/wooorm/nlcst

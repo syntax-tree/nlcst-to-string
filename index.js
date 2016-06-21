@@ -1,9 +1,9 @@
 /**
  * @author Titus Wormer
- * @copyright 2014-2015 Titus Wormer
+ * @copyright 2014 Titus Wormer
  * @license MIT
  * @module nlcst:to-string
- * @fileoverview Transform an NLCST node into a string.
+ * @fileoverview Stringify NLCST.
  */
 
 'use strict';
@@ -20,11 +20,14 @@
  * @return {string} - Stringified `node`.
  */
 function nlcstToString(node, separator) {
+    var sep = separator || '';
     var values;
     var length;
     var children;
 
-    separator = separator || '';
+    if (!node || (!('length' in node) && !node.type)) {
+        throw new Error('Expected node, not `' + node + '`');
+    }
 
     if (typeof node.value === 'string') {
         return node.value;
@@ -44,10 +47,10 @@ function nlcstToString(node, separator) {
     values = [];
 
     while (length--) {
-        values[length] = nlcstToString(children[length], separator);
+        values[length] = nlcstToString(children[length], sep);
     }
 
-    return values.join(separator);
+    return values.join(sep);
 }
 
 /*

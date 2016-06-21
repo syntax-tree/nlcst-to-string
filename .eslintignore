@@ -1,7 +1,4 @@
-build/
-components/
 coverage/
-build.js
 example.js
 nlcst-to-string.js
 nlcst-to-string.min.js
