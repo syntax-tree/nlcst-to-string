@@ -1,7 +1,5 @@
 # nlcst-to-string [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-<!--lint disable heading-increment list-item-spacing-->
-
 Stringify [NLCST][].
 
 ## Installation
@@ -14,24 +12,17 @@ npm install nlcst-to-string
 
 ## Usage
 
-Dependencies:
-
 ```javascript
 var toString = require('nlcst-to-string');
-```
 
-Stringify:
-
-```javascript
-var node = {
-    type: 'WordNode',
-    children: [
-        { type: 'TextNode', value: 'AT' },
-        { type: 'PunctuationNode', value: '&' },
-        { type: 'TextNode', value: 'T' }
-    ]
-};
-var value = toString(node);
+console.log(toString({
+  type: 'WordNode',
+  children: [
+    {type: 'TextNode', value: 'AT'},
+    {type: 'PunctuationNode', value: '&'},
+    {type: 'TextNode', value: 'T'}
+  ]
+}));
 ```
 
 Yields:
