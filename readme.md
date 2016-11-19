@@ -4,7 +4,7 @@ Stringify [NLCST][].
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install nlcst-to-string
@@ -61,7 +61,7 @@ Stringify the given [NLCST][] node (or list of nodes).
 
 [codecov]: https://codecov.io/github/wooorm/nlcst-to-string
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
