@@ -27,18 +27,14 @@
     "browserify": "^13.0.1",
     "esmangle": "^1.0.1",
     "istanbul": "^0.4.0",
-    "remark-cli": "^1.0.0",
-    "remark-comment-config": "^4.0.0",
-    "remark-github": "^5.0.0",
-    "remark-lint": "^4.0.0",
-    "remark-usage": "^4.0.0",
-    "remark-validate-links": "^4.0.0",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.0.0",
     "unist-builder": "^1.0.1",
     "xo": "^0.17.1"
   },
   "scripts": {
-    "build-md": "remark . --quiet --frail",
+    "build-md": "remark . --quiet --frail --output",
     "build-bundle": "browserify index.js --bare -s nlcstToString > nlcst-to-string.js",
     "build-mangle": "esmangle nlcst-to-string.js > nlcst-to-string.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
@@ -52,5 +48,8 @@
     "ignore": [
       "nlcst-to-string.js"
     ]
+  },
+  "remarkConfig": {
+    "presets": "wooorm"
   }
 }
