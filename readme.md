@@ -53,13 +53,13 @@ Stringify the given [NLCST][] node (or list of nodes).
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/nlcst-to-string.svg
+[travis-badge]: https://img.shields.io/travis/syntax-tree/nlcst-to-string.svg
 
-[travis]: https://travis-ci.org/wooorm/nlcst-to-string
+[travis]: https://travis-ci.org/syntax-tree/nlcst-to-string
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/nlcst-to-string.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/syntax-tree/nlcst-to-string.svg
 
-[codecov]: https://codecov.io/github/wooorm/nlcst-to-string
+[codecov]: https://codecov.io/github/syntax-tree/nlcst-to-string
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -67,4 +67,4 @@ Stringify the given [NLCST][] node (or list of nodes).
 
 [author]: http://wooorm.com
 
-[nlcst]: https://github.com/wooorm/nlcst
+[nlcst]: https://github.com/syntax-tree/nlcst

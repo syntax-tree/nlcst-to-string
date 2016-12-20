@@ -12,11 +12,8 @@
   "files": [
     "index.js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/nlcst-to-string.git"
-  },
-  "bugs": "https://github.com/wooorm/nlcst-to-string/issues",
+  "repository": "https://github.com/syntax-tree/nlcst-to-string",
+  "bugs": "https://github.com/syntax-tree/nlcst-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
