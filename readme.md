@@ -22,13 +22,7 @@ console.log(toString({
     {type: 'PunctuationNode', value: '&'},
     {type: 'TextNode', value: 'T'}
   ]
-}));
-```
-
-Yields:
-
-```text
-AT&T
+})); //=> 'AT&T'
 ```
 
 ## API
