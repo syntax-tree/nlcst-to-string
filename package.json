@@ -9,9 +9,6 @@
     "to",
     "string"
   ],
-  "files": [
-    "index.js"
-  ],
   "repository": "https://github.com/syntax-tree/nlcst-to-string",
   "bugs": "https://github.com/syntax-tree/nlcst-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
@@ -19,16 +16,19 @@
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
     "Kenichiro Murata <kenichiro.murata@gmail.com>"
   ],
+  "files": [
+    "index.js"
+  ],
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^13.0.1",
+    "browserify": "^14.0.0",
     "esmangle": "^1.0.1",
-    "nyc": "^10.0.0",
-    "remark-cli": "^2.0.0",
-    "remark-preset-wooorm": "^1.0.0",
+    "nyc": "^11.0.0",
+    "remark-cli": "^3.0.0",
+    "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.0.0",
     "unist-builder": "^1.0.1",
-    "xo": "^0.17.1"
+    "xo": "^0.18.2"
   },
   "scripts": {
     "build-md": "remark . --quiet --frail --output",
@@ -48,11 +48,14 @@
   },
   "xo": {
     "space": true,
+    "esnext": false,
     "ignore": [
       "nlcst-to-string.js"
     ]
   },
   "remarkConfig": {
-    "presets": "wooorm"
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
