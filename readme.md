@@ -33,9 +33,9 @@ Stringify the given [NLCST][] node (or list of nodes).
 
 ###### Parameters
 
-*   `node` ([`NLCSTNode`][nlcst] or `Array.<NLCSTNode>`).
+*   `node` ([`NLCSTNode`][nlcst] or `Array.<NLCSTNode>`)
 *   `separator` (`string`, optional, default: `''`)
-    — Value to separate each item with.
+    — Value to separate each item with
 
 ###### Returns
 
