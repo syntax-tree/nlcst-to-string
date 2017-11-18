@@ -9,7 +9,7 @@
     "to",
     "string"
   ],
-  "repository": "https://github.com/syntax-tree/nlcst-to-string",
+  "repository": "syntax-tree/nlcst-to-string",
   "bugs": "https://github.com/syntax-tree/nlcst-to-string/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
