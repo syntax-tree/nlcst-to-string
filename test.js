@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var u = require('unist-builder');
-var toString = require('./');
+var toString = require('.');
 
 test('toString()', function (t) {
   t.throws(
