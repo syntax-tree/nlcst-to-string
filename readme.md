@@ -13,16 +13,18 @@ npm install nlcst-to-string
 ## Usage
 
 ```javascript
-var toString = require('nlcst-to-string');
+var toString = require('nlcst-to-string')
 
-console.log(toString({
-  type: 'WordNode',
-  children: [
-    {type: 'TextNode', value: 'AT'},
-    {type: 'PunctuationNode', value: '&'},
-    {type: 'TextNode', value: 'T'}
-  ]
-})); //=> 'AT&T'
+console.log(
+  toString({
+    type: 'WordNode',
+    children: [
+      {type: 'TextNode', value: 'AT'},
+      {type: 'PunctuationNode', value: '&'},
+      {type: 'TextNode', value: 'T'}
+    ]
+  })
+) // => 'AT&T'
 ```
 
 ## API

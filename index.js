@@ -1,35 +1,35 @@
-'use strict';
+'use strict'
 
-module.exports = nlcstToString;
+module.exports = nlcstToString
 
 /* Stringify a NLCST node or list of nodes. */
 function nlcstToString(node, separator) {
-  var sep = separator || '';
-  var values;
-  var length;
-  var children;
+  var sep = separator || ''
+  var values
+  var length
+  var children
 
   if (!node || (!('length' in node) && !node.type)) {
-    throw new Error('Expected node, not `' + node + '`');
+    throw new Error('Expected node, not `' + node + '`')
   }
 
   if (typeof node.value === 'string') {
-    return node.value;
+    return node.value
   }
 
-  children = 'length' in node ? node : node.children;
-  length = children.length;
+  children = 'length' in node ? node : node.children
+  length = children.length
 
   /* Shortcut: This is pretty common, and a small performance win. */
   if (length === 1 && 'value' in children[0]) {
-    return children[0].value;
+    return children[0].value
   }
 
-  values = [];
+  values = []
 
   while (length--) {
-    values[length] = nlcstToString(children[length], sep);
+    values[length] = nlcstToString(children[length], sep)
   }
 
-  return values.join(sep);
+  return values.join(sep)
 }
