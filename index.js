@@ -2,7 +2,7 @@
 
 module.exports = nlcstToString
 
-/* Stringify a NLCST node or list of nodes. */
+// Stringify one nlcst node or list of nodes.
 function nlcstToString(node, separator) {
   var sep = separator || ''
   var values
@@ -20,7 +20,7 @@ function nlcstToString(node, separator) {
   children = 'length' in node ? node : node.children
   length = children.length
 
-  /* Shortcut: This is pretty common, and a small performance win. */
+  // Shortcut: This is pretty common, and a small performance win.
   if (length === 1 && 'value' in children[0]) {
     return children[0].value
   }
