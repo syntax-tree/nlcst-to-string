@@ -11,9 +11,9 @@
   ],
   "repository": "syntax-tree/nlcst-to-string",
   "bugs": "https://github.com/syntax-tree/nlcst-to-string/issues",
-  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
     "Kenichiro Murata <kenichiro.murata@gmail.com>"
   ],
   "files": [
