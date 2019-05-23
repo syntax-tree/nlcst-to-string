@@ -8,19 +8,19 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Stringify [NLCST][].
+[**nlcst**][nlcst] utility to stringify a node.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install nlcst-to-string
 ```
 
 ## Usage
 
-```javascript
+```js
 var toString = require('nlcst-to-string')
 
 console.log(
@@ -39,13 +39,13 @@ console.log(
 
 ### `toString(node[, separator])`
 
-Stringify the given [NLCST][] node (or list of nodes).
+Stringify the given [nlcst][] node (or list of nodes).
 
 ###### Parameters
 
-*   `node` ([`NLCSTNode`][nlcst] or `Array.<NLCSTNode>`)
+*   `node` ([`Node`][node] or `Array.<Node>`)
 *   `separator` (`string`, optional, default: `''`)
-    — Value to separate each item with
+    — Value to delimit each item
 
 ###### Returns
 
@@ -53,11 +53,13 @@ Stringify the given [NLCST][] node (or list of nodes).
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/nlcst`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -97,8 +99,12 @@ repository, organisation, or community you agree to abide by its terms.
 
 [author]: https://wooorm.com
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [nlcst]: https://github.com/syntax-tree/nlcst
 
-[contributing]: https://github.com/syntax-tree/nlcst/blob/master/contributing.md
-
-[coc]: https://github.com/syntax-tree/nlcst/blob/master/code-of-conduct.md
+[node]: https://github.com/syntax-tree/nlcst#nodes
