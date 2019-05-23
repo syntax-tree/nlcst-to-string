@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_success: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: GdojWZH0uCo2DguOuk7Zg2okWRsllUFj1Dr9SYAyDYuqSk8kebGtVFhCVVgqdRtQbeARrH8fFJ3r37/ab/1WImfHjru9R0I18udjELbA3nN1FyVyynlSzBhofBzzBSlUQP3RoC1n4zroUuZWTz3h6PQiCwK2jV74/R2a54scQqQ=
+    secure: hAXH6qtC2z55WaH9LlBWJlia654WNw68gGOcsx3YvJy+TZSA3kAuCgEfiN/vM1HfRtzGthfWkCqCgJYgLS1q0+0ZuOZx4iLhazKuBcnVqjErHXSYffl2H8+5cKxMEa2hhpBp1/OXCmYNDI6D5Xq25yt/I6tPRjhZPeBbP0oKDyk=
   file:
-    - "nlcst-to-string.js"
-    - "nlcst-to-string.min.js"
+    - 'nlcst-to-string.js'
+    - 'nlcst-to-string.min.js'
   on:
     tags: true
