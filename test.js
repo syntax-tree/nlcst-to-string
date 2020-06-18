@@ -4,9 +4,9 @@ var test = require('tape')
 var u = require('unist-builder')
 var toString = require('.')
 
-test('toString()', function(t) {
+test('toString()', function (t) {
   t.throws(
-    function() {
+    function () {
       toString()
     },
     /undefined/,
@@ -14,7 +14,7 @@ test('toString()', function(t) {
   )
 
   t.throws(
-    function() {
+    function () {
       toString({value: 'foo'})
     },
     /\[object Object]/,
