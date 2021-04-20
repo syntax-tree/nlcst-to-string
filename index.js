@@ -3,8 +3,7 @@
 module.exports = nlcstToString
 
 // Stringify one nlcst node or list of nodes.
-function nlcstToString(node, separator) {
-  var sep = separator || ''
+function nlcstToString(node, separator = '') {
   var values
   var length
   var children
@@ -28,8 +27,8 @@ function nlcstToString(node, separator) {
   values = []
 
   while (length--) {
-    values[length] = nlcstToString(children[length], sep)
+    values[length] = nlcstToString(children[length], separator)
   }
 
-  return values.join(sep)
+  return values.join(separator)
 }
