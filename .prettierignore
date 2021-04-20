@@ -1,5 +1,2 @@
 coverage/
-nlcst-to-string.js
-nlcst-to-string.min.js
-*.json
 *.md

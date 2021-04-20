@@ -1,9 +1,5 @@
-'use strict'
-
-module.exports = nlcstToString
-
 // Stringify one nlcst node or list of nodes.
-function nlcstToString(node, separator = '') {
+export function toString(node, separator = '') {
   var values
   var length
   var children
@@ -27,7 +23,7 @@ function nlcstToString(node, separator = '') {
   values = []
 
   while (length--) {
-    values[length] = nlcstToString(children[length], separator)
+    values[length] = toString(children[length], separator)
   }
 
   return values.join(separator)

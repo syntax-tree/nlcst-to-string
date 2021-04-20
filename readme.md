@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,7 +24,7 @@ npm install nlcst-to-string
 ## Use
 
 ```js
-var toString = require('nlcst-to-string')
+import {toString} from 'nlcst-to-string'
 
 console.log(
   toString({
@@ -36,6 +39,9 @@ console.log(
 ```
 
 ## API
+
+This package exports the following identifiers: `toString`.
+There is no default export.
 
 ### `toString(node[, separator])`
 

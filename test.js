@@ -1,8 +1,6 @@
-'use strict'
-
-var test = require('tape')
-var u = require('unist-builder')
-var toString = require('.')
+import test from 'tape'
+import {u} from 'unist-builder'
+import {toString} from './index.js'
 
 test('toString()', function (t) {
   t.throws(
