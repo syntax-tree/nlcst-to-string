@@ -25,7 +25,7 @@ export function toString(node, separator = '') {
   if (typeof node.value === 'string') return node.value
 
   // @ts-ignore Looks like a list of nodes or parent.
-  children = 'length' in node ? node : node.children
+  children = ('length' in node ? node : node.children) || []
 
   // Shortcut: This is pretty common, and a small performance win.
   if (children.length === 1 && 'value' in children[0]) {
