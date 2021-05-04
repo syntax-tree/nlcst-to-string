@@ -50,5 +50,7 @@ test('toString()', function (t) {
     'should support separators'
   )
 
+  t.equal(toString(u('foo')), '', 'should support voids')
+
   t.end()
 })
