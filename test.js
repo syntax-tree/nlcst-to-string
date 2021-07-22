@@ -2,9 +2,9 @@ import test from 'tape'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
 
-test('toString()', function (t) {
+test('toString()', (t) => {
   t.throws(
-    function () {
+    () => {
       // @ts-expect-error: runtime.
       toString()
     },
@@ -13,7 +13,7 @@ test('toString()', function (t) {
   )
 
   t.throws(
-    function () {
+    () => {
       toString({value: 'foo'})
     },
     /\[object Object]/,
