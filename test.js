@@ -5,6 +5,7 @@ import {toString} from './index.js'
 test('toString()', function (t) {
   t.throws(
     function () {
+      // @ts-expect-error: runtime.
       toString()
     },
     /undefined/,
