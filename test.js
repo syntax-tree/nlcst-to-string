@@ -14,29 +14,41 @@ test('toString()', (t) => {
 
   t.throws(
     () => {
+      // @ts-expect-error: missing `type`.
       toString({value: 'foo'})
     },
     /\[object Object]/,
     'should throw when not given a node (#2)'
   )
 
-  t.equal(toString(u('foo', 'AT')), 'AT', 'should support texts')
+  t.equal(toString(u('TextNode', 'AT')), 'AT', 'should support texts')
 
   t.equal(
-    toString(u('foo', [u('bar', 'AT'), u('bar', '&'), u('bar', 'T')])),
+    toString(
+      u('WordNode', [
+        u('TextNode', 'AT'),
+        u('SymbolNode', '&'),
+        u('TextNode', 'T')
+      ])
+    ),
     'AT&T',
     'should support parents'
   )
 
   t.equal(
-    toString([u('bar', 'AT'), u('bar', '&'), u('bar', 'T')]),
+    toString([u('TextNode', 'AT'), u('SymbolNode', '&'), u('TextNode', 'T')]),
     'AT&T',
     'should support nodes'
   )
 
   t.equal(
     toString(
-      u('foo', [u('bar', 'AT'), u('foo', [u('bar', '&')]), u('bar', 'T')])
+      // @ts-expect-error: custom.
+      u('WordNode', [
+        u('TextNode', 'AT'),
+        u('SomeNode', [u('TextNode', '&')]),
+        u('TextNode', 'T')
+      ])
     ),
     'AT&T',
     'should support parents with mixed children'
@@ -44,14 +56,20 @@ test('toString()', (t) => {
 
   t.equal(
     toString(
-      u('foo', [u('bar', 'AT'), u('foo', [u('bar', '&')]), u('bar', 'T')]),
+      // @ts-expect-error: custom.
+      u('WordNode', [
+        u('TextNode', 'AT'),
+        u('WordNode', [u('TextNode', '&')]),
+        u('TextNode', 'T')
+      ]),
       ','
     ),
     'AT,&,T',
     'should support separators'
   )
 
-  t.equal(toString(u('foo')), '', 'should support voids')
+  // @ts-expect-error: custom node.
+  t.equal(toString(u('VoidNode')), '', 'should support voids')
 
   t.end()
 })
