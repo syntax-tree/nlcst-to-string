@@ -8,17 +8,51 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**nlcst**][nlcst] utility to serialize a node.
+[nlcst][] utility to serialize a node.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`toString(node[, separator])`](#tostringnode-separator)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a utility that takes [nlcst][] nodes and gets their plain-text
+value.
+
+## When should I use this?
+
+This is a small utility that is useful when you’re dealing with ASTs.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
 
 ```sh
-npm install nlcst-to-string
+npm install nlcst-util-to-string
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {toString} from "https://esm.sh/nlcst-util-to-string@3"
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {toString} from "https://esm.sh/nlcst-util-to-string@3?bundle"
+</script>
 ```
 
 ## Use
@@ -40,7 +74,7 @@ console.log(
 
 ## API
 
-This package exports the following identifiers: `toString`.
+This package exports the identifier `toString`.
 There is no default export.
 
 ### `toString(node[, separator])`
@@ -49,17 +83,29 @@ Stringify the given [nlcst][] node (or list of nodes).
 
 ###### Parameters
 
-*   `node` ([`Node`][node] or `Array<Node>`)
-*   `separator` (`string`, default: `''`) — Value to delimit each item
+*   `node` ([`Node`][node] or `Array<Node>`) — node to serialize.
+*   `separator` (`string`, default: `''`) — value to delimit each item
 
 ###### Returns
 
 `string`.
 
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
+
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -100,15 +146,23 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [nlcst]: https://github.com/syntax-tree/nlcst
 
