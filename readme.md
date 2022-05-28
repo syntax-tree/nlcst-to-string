@@ -49,7 +49,7 @@ Stringify the given [nlcst][] node (or list of nodes).
 
 ###### Parameters
 
-*   `node` ([`Node`][node] or `Array.<Node>`)
+*   `node` ([`Node`][node] or `Array<Node>`)
 *   `separator` (`string`, default: `''`) — Value to delimit each item
 
 ###### Returns

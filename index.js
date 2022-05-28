@@ -6,7 +6,7 @@
 /**
  * Stringify one nlcst node or list of nodes.
  *
- * @param {Root|Content|Content[]} node
+ * @param {Root|Content|Array<Content>} node
  * @param {string} [separator='']
  * @returns {string}
  */
@@ -20,7 +20,7 @@ export function toString(node, separator = '') {
   // @ts-expect-error Looks like a literal.
   if (typeof node.value === 'string') return node.value
 
-  /** @type {Array.<Content|Root>} */
+  /** @type {Array<Content|Root>} */
   // @ts-expect-error Looks like a list of nodes or parent.
   const children = (Array.isArray(node) ? node : node.children) || []
 
@@ -29,7 +29,7 @@ export function toString(node, separator = '') {
     return children[0].value
   }
 
-  /** @type {Array.<string>} */
+  /** @type {Array<string>} */
   const values = []
 
   while (++index < children.length) {
