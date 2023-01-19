@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`toString(node[, separator])`](#tostringnode-separator)
+    *   [`toString(value[, separator])`](#tostringvalue-separator)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Contribute](#contribute)
@@ -35,7 +35,7 @@ This is a small utility that is useful when you’re dealing with ASTs.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install nlcst-to-string
@@ -44,14 +44,14 @@ npm install nlcst-to-string
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {toString} from "https://esm.sh/nlcst-to-string@3"
+import {toString} from 'https://esm.sh/nlcst-to-string@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {toString} from "https://esm.sh/nlcst-to-string@3?bundle"
+  import {toString} from 'https://esm.sh/nlcst-to-string@3?bundle'
 </script>
 ```
 
@@ -74,21 +74,26 @@ console.log(
 
 ## API
 
-This package exports the identifier `toString`.
+This package exports the identifier [`toString`][tostring].
 There is no default export.
 
-### `toString(node[, separator])`
+### `toString(value[, separator])`
 
-Stringify the given [nlcst][] node (or list of nodes).
+Get the text content of a node or list of nodes.
+
+Prefers the node’s plain-text fields, otherwise serializes its children, and
+if the given value is an array, serialize the nodes in it.
 
 ###### Parameters
 
-*   `node` ([`Node`][node] or `Array<Node>`) — node to serialize.
-*   `separator` (`string`, default: `''`) — value to delimit each item
+*   `node` ([`Node`][node] or `Array<Node>`)
+    — node to serialize.
+*   `separator` (`string`, default: `''`)
+    — value to delimit each item
 
 ###### Returns
 
-`string`.
+Result (`string`).
 
 ## Types
 
@@ -99,7 +104,7 @@ It exports no additional types.
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Contribute
@@ -167,3 +172,5 @@ abide by its terms.
 [nlcst]: https://github.com/syntax-tree/nlcst
 
 [node]: https://github.com/syntax-tree/nlcst#nodes
+
+[tostring]: #tostringvalue-separator
