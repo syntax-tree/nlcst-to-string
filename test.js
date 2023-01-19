@@ -2,8 +2,15 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
+import * as mod from './index.js'
 
-test('toString()', () => {
+test('toString', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['toString'],
+    'should expose the public api'
+  )
+
   assert.throws(
     () => {
       // @ts-expect-error: runtime.
