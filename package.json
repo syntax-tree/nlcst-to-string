@@ -1,6 +1,6 @@
 {
   "name": "nlcst-to-string",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "nlcst utility to transform a tree to a string",
   "license": "MIT",
   "keywords": [
