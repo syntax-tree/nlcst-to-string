@@ -1,9 +1,10 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
 
-test('toString()', (t) => {
-  t.throws(
+test('toString()', () => {
+  assert.throws(
     () => {
       // @ts-expect-error: runtime.
       toString()
@@ -12,7 +13,7 @@ test('toString()', (t) => {
     'should throw when not given a node (#1)'
   )
 
-  t.throws(
+  assert.throws(
     () => {
       // @ts-expect-error: missing `type`.
       toString({value: 'foo'})
@@ -21,9 +22,9 @@ test('toString()', (t) => {
     'should throw when not given a node (#2)'
   )
 
-  t.equal(toString(u('TextNode', 'AT')), 'AT', 'should support texts')
+  assert.equal(toString(u('TextNode', 'AT')), 'AT', 'should support texts')
 
-  t.equal(
+  assert.equal(
     toString(
       u('WordNode', [
         u('TextNode', 'AT'),
@@ -35,13 +36,13 @@ test('toString()', (t) => {
     'should support parents'
   )
 
-  t.equal(
+  assert.equal(
     toString([u('TextNode', 'AT'), u('SymbolNode', '&'), u('TextNode', 'T')]),
     'AT&T',
     'should support nodes'
   )
 
-  t.equal(
+  assert.equal(
     toString(
       // @ts-expect-error: custom.
       u('WordNode', [
@@ -54,7 +55,7 @@ test('toString()', (t) => {
     'should support parents with mixed children'
   )
 
-  t.equal(
+  assert.equal(
     toString(
       // @ts-expect-error: custom.
       u('WordNode', [
@@ -69,7 +70,5 @@ test('toString()', (t) => {
   )
 
   // @ts-expect-error: custom node.
-  t.equal(toString(u('VoidNode')), '', 'should support voids')
-
-  t.end()
+  assert.equal(toString(u('VoidNode')), '', 'should support voids')
 })
