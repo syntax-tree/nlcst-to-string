@@ -34,7 +34,7 @@
     "index.js"
   ],
   "dependencies": {
-    "@types/nlcst": "^1.0.0"
+    "@types/nlcst": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -44,7 +44,7 @@
     "remark-preset-wooorm": "^9.0.0",
     "type-coverage": "^2.0.0",
     "typescript": "^5.0.0",
-    "unist-builder": "^3.0.0",
+    "unist-builder": "^4.0.0",
     "xo": "^0.55.0"
   },
   "scripts": {
