@@ -44,14 +44,14 @@ npm install nlcst-to-string
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {toString} from 'https://esm.sh/nlcst-to-string@3'
+import {toString} from 'https://esm.sh/nlcst-to-string@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {toString} from 'https://esm.sh/nlcst-to-string@3?bundle'
+  import {toString} from 'https://esm.sh/nlcst-to-string@4?bundle'
 </script>
 ```
 
