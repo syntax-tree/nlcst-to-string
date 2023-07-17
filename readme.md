@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`toString(value[, separator])`](#tostringvalue-separator)
+    *   [`toString(value)`](#tostringvalue)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Contribute](#contribute)
@@ -65,7 +65,7 @@ console.log(
     type: 'WordNode',
     children: [
       {type: 'TextNode', value: 'AT'},
-      {type: 'PunctuationNode', value: '&'},
+      {type: 'SymbolNode', value: '&'},
       {type: 'TextNode', value: 'T'}
     ]
   })
@@ -74,10 +74,10 @@ console.log(
 
 ## API
 
-This package exports the identifier [`toString`][tostring].
+This package exports the identifier [`toString`][api-to-string].
 There is no default export.
 
-### `toString(value[, separator])`
+### `toString(value)`
 
 Get the text content of a node or list of nodes.
 
@@ -86,10 +86,8 @@ if the given value is an array, serialize the nodes in it.
 
 ###### Parameters
 
-*   `node` ([`Node`][node] or `Array<Node>`)
-    — node to serialize.
-*   `separator` (`string`, default: `''`)
-    — value to delimit each item
+*   `node` ([`Array<Node>`][node] or `Node`)
+    — node or list of nodes to serialize
 
 ###### Returns
 
@@ -173,4 +171,4 @@ abide by its terms.
 
 [node]: https://github.com/syntax-tree/nlcst#nodes
 
-[tostring]: #tostringvalue-separator
+[api-to-string]: #tostringvalue

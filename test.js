@@ -14,14 +14,14 @@ test('toString', async function (t) {
     assert.throws(function () {
       // @ts-expect-error: check how the runtime handles no node.
       toString()
-    })
+    }, /Expected node/)
   })
 
   await t.test('should throw when not given a node (#2)', async function () {
     assert.throws(function () {
       // @ts-expect-error: check how the runtime handles no `type`.
       toString({value: 'foo'})
-    })
+    }, /Expected node/)
   })
 
   await t.test('should support texts', async function () {
@@ -58,20 +58,6 @@ test('toString', async function (t) {
         ])
       ),
       'AT&T'
-    )
-  })
-
-  await t.test('should support separators', async function () {
-    assert.equal(
-      toString(
-        u('WordNode', [
-          u('TextNode', 'AT'),
-          u('SymbolNode', '&'),
-          u('TextNode', 'T')
-        ]),
-        ','
-      ),
-      'AT,&,T'
     )
   })
 
