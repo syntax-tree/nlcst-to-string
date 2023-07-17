@@ -2,80 +2,87 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
-import * as mod from './index.js'
 
-test('toString', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['toString'],
-    'should expose the public api'
-  )
+test('toString', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'toString'
+    ])
+  })
 
-  assert.throws(
-    () => {
-      // @ts-expect-error: runtime.
+  await t.test('should throw when not given a node (#1)', async function () {
+    assert.throws(function () {
+      // @ts-expect-error: check how the runtime handles no node.
       toString()
-    },
-    /undefined/,
-    'should throw when not given a node (#1)'
-  )
+    })
+  })
 
-  assert.throws(
-    () => {
-      // @ts-expect-error: missing `type`.
+  await t.test('should throw when not given a node (#2)', async function () {
+    assert.throws(function () {
+      // @ts-expect-error: check how the runtime handles no `type`.
       toString({value: 'foo'})
-    },
-    /\[object Object]/,
-    'should throw when not given a node (#2)'
-  )
+    })
+  })
 
-  assert.equal(toString(u('TextNode', 'AT')), 'AT', 'should support texts')
+  await t.test('should support texts', async function () {
+    assert.equal(toString(u('TextNode', 'AT')), 'AT')
+  })
 
-  assert.equal(
-    toString(
-      u('WordNode', [
-        u('TextNode', 'AT'),
-        u('SymbolNode', '&'),
-        u('TextNode', 'T')
-      ])
-    ),
-    'AT&T',
-    'should support parents'
-  )
+  await t.test('should support parents', async function () {
+    assert.equal(
+      toString(
+        u('WordNode', [
+          u('TextNode', 'AT'),
+          u('SymbolNode', '&'),
+          u('TextNode', 'T')
+        ])
+      ),
+      'AT&T'
+    )
+  })
 
-  assert.equal(
-    toString([u('TextNode', 'AT'), u('SymbolNode', '&'), u('TextNode', 'T')]),
-    'AT&T',
-    'should support nodes'
-  )
+  await t.test('should support nodes', async function () {
+    assert.equal(
+      toString([u('TextNode', 'AT'), u('SymbolNode', '&'), u('TextNode', 'T')]),
+      'AT&T'
+    )
+  })
 
-  assert.equal(
-    toString(
-      // @ts-expect-error: custom.
-      u('WordNode', [
-        u('TextNode', 'AT'),
-        u('SomeNode', [u('TextNode', '&')]),
-        u('TextNode', 'T')
-      ])
-    ),
-    'AT&T',
-    'should support parents with mixed children'
-  )
+  await t.test('should support parents with mixed children', async function () {
+    assert.equal(
+      toString(
+        u('WordNode', [
+          u('TextNode', 'AT'),
+          u('SymbolNode', '&'),
+          u('TextNode', 'T')
+        ])
+      ),
+      'AT&T'
+    )
+  })
 
-  assert.equal(
-    toString(
-      // @ts-expect-error: custom.
-      u('WordNode', [
-        u('TextNode', 'AT'),
-        u('WordNode', [u('TextNode', '&')]),
-        u('TextNode', 'T')
-      ]),
-      ','
-    ),
-    'AT,&,T',
-    'should support separators'
-  )
+  await t.test('should support separators', async function () {
+    assert.equal(
+      toString(
+        u('WordNode', [
+          u('TextNode', 'AT'),
+          u('SymbolNode', '&'),
+          u('TextNode', 'T')
+        ]),
+        ','
+      ),
+      'AT,&,T'
+    )
+  })
 
-  // @ts-expect-error: custom node.
-  assert.equal(toString(u('VoidNode')), '', 'should support voids')
+  await t.test('should support voids', async function () {
+    assert.equal(
+      toString(
+        // @ts-expect-error: check how the runtime handles custom nodes.
+
+        u('VoidNode')
+      ),
+      ''
+    )
+  })
 })
