@@ -12,16 +12,16 @@
 
 ## Contents
 
-*   [What is this?](#what-is-this)
-*   [When should I use this?](#when-should-i-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`toString(value)`](#tostringvalue)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Contribute](#contribute)
-*   [License](#license)
+* [What is this?](#what-is-this)
+* [When should I use this?](#when-should-i-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`toString(value)`](#tostringvalue)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Contribute](#contribute)
+* [License](#license)
 
 ## What is this?
 
@@ -86,8 +86,8 @@ if the given value is an array, serialize the nodes in it.
 
 ###### Parameters
 
-*   `node` ([`Array<Node>`][node] or `Node`)
-    — node or list of nodes to serialize
+* `node` ([`Array<Node>`][node] or `Node`)
+  — node or list of nodes to serialize
 
 ###### Returns
 
